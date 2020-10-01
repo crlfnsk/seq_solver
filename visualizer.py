@@ -1,9 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Thu Aug 13 12:50:59 2020
-
-@author: tommy
+Routine to visualize wave functions:
 """
 import matplotlib.pyplot as plt
 import solver
@@ -42,4 +38,4 @@ def wavevisualizer(stretch=1, xlim=None, ylim=None):
     ax1.set_xlim(xlim)
     ax1.set_ylim(ylim)
     plt.show()
-# wavevisualizer(stretch=.4, ylim=(0, 3))
+wavevisualizer(stretch=.4, ylim=(0, 3))

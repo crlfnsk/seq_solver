@@ -1,15 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Mon Aug 17 12:51:25 2020
-
-@author: tommy
+Executable python script for solving the one dimensinal schroedinger equation:
 """
 import solveio
 import solver
 
 
-def main(inputdir="testdata/harmonic_oscillator.inp"):
+def main(inputdir):
     """
     Main function for solving the schroedinger equation
     """
@@ -25,8 +21,9 @@ def main(inputdir="testdata/harmonic_oscillator.inp"):
     energies, xx, wavefunc, delta = catcher
     wavefunc = solver.normalization(wavefunc, delta)
     expval = solver.expectedvalue(wavefunc, xx, delta)
-    print(expval)
+    solveio.write_output(energies, xx, wavefunc, expval, pot, inputdir)
 
 
 if __name__ == "__main__":
-    main()
+    inputdir = input("Enter the path to the inputfile 'schrodinger.inp': ")
+    main(inputdir)
